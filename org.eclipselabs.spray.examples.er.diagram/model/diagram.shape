@@ -7,20 +7,21 @@
  *************************************************************************************/
 
 shape EntityShape {
-    rounded-rectangle {
+    rounded-rectangle style ShapeStyle {
         curve (width=8, height=8)
         size (width=200, height=120)
-        text {
+        text style CompartmentStyle {
             position (x=5, y=1)
             size (width=160, height=10)
-            style (font-bold = yes)
+            style (font-bold = yes font-color = white)
             id = entityNameLabel
         }
         line {
         	point (x=0, y=25)
         	point (x=200, y=25)
+        	style (line-width = 3)
         }
-        rectangle {
+        rectangle style CompartmentStyle {
             compartment (
                 layout = vertical
                 margin=3
@@ -35,9 +36,10 @@ shape EntityShape {
 
 shape FieldShape { 
     stretching (horizontal=true, vertical=false)
-    text {
+    text style CompartmentStyle {
         position (x=3, y=0)
         size (width=176, height=12)
+        style (font-bold = no font-color=white)
         id = label
     }
 }
