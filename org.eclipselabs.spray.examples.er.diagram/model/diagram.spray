@@ -15,9 +15,19 @@ diagram EntityRelationshipDiagram for ERModel style ERDiagramDefaultStyle
 class Entity icon "ecore/EClass.gif" {
 	shape EntityShape {
 		name into entityNameLabel
+		reference fields into fieldCompartment
 	}
 	behavior {
 	    create into entities palette "Objects"
+	}
+}
+
+class Field icon "ecore/EAttribute.gif" {
+	shape FieldShape {
+		name into label
+	}
+	behavior {
+	    create palette "Objects" 
 	}
 }
 

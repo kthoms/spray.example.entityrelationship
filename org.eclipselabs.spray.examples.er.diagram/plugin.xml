@@ -102,6 +102,23 @@
 <extension
     point="org.eclipse.ui.views.properties.tabbed.propertySections">
     <propertySections contributorId="EntityRelationshipDiagram.PropertyContributor">
+  <propertySection tab="EntityRelationshipDiagram.main.tab"
+   class="org.eclipselabs.spray.examples.er.diagram.internal.ExecutableExtensionFactory:org.eclipselabs.spray.examples.er.diagram.property.FieldNameSection"
+   filter="org.eclipselabs.spray.examples.er.diagram.property.FieldFilter"
+   id="EntityRelationshipDiagram.main.tab.Field.name">
+  </propertySection>
+  <propertySection tab="EntityRelationshipDiagram.main.tab"
+   class="org.eclipselabs.spray.examples.er.diagram.internal.ExecutableExtensionFactory:org.eclipselabs.spray.examples.er.diagram.property.FieldTypeSection"
+   filter="org.eclipselabs.spray.examples.er.diagram.property.FieldFilter"
+   afterSection="EntityRelationshipDiagram.main.tab.Field.name"
+   id="EntityRelationshipDiagram.main.tab.Field.type">
+  </propertySection>
+    </propertySections>
+</extension>
+
+<extension
+    point="org.eclipse.ui.views.properties.tabbed.propertySections">
+    <propertySections contributorId="EntityRelationshipDiagram.PropertyContributor">
     </propertySections>
 </extension>
 
