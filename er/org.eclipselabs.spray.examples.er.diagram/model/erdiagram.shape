@@ -1,0 +1,57 @@
+/*************************************************************************************
+ *
+ * Spray shapes definition
+ * 
+ * This file contains the definition of graphical figures using the Shapes Language.
+ * Refer to http://code.google.com/a/eclipselabs.org/p/spray/ for documentation.
+ *************************************************************************************/
+
+shape EntityShape style ShapeStyle {
+    rounded-rectangle style ShapeStyle {
+        curve (width=8, height=8)
+        size (width=200, height=120)
+        text style CompartmentStyle {
+            position (x=5, y=1)
+            size (width=160, height=10)
+            style (font-bold = yes)
+            id = entityNameLabel
+        }
+        line {
+        	point (x=0, y=25)
+        	point (x=200, y=25)
+        }
+        rectangle style CompartmentStyle {
+            compartment (
+                layout = vertical
+                margin=3
+                spacing=1
+                id = fieldCompartment
+            )
+            position (x=1, y=28)
+            size (width=198, height=90)
+        }
+    }
+}
+
+shape FieldShape style CompartmentStyle { 
+    stretching (horizontal=true, vertical=false)
+    text style CompartmentStyle {
+        position (x=3, y=0)
+        size (width=176, height=12)
+        id = label
+    }
+}
+
+
+connection ToOneConnectionShape {
+     placing {
+         position (offset=1.0)
+         polygon {
+             point (x=-10, y=-5)
+             point (x=0, y=0)
+             point (x=-10, y=5)
+             style (background-color=black)
+         }
+     }
+} 
+
