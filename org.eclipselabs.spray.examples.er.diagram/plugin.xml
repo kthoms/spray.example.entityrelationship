@@ -12,12 +12,12 @@
 <extension
       point="org.eclipse.ui.editors">
    <editor
-       class="org.eclipselabs.spray.examples.er.diagram.internal.ExecutableExtensionFactory:org.eclipselabs.spray.examples.er.diagram.diagram.MydiagramDiagramEditor"
+       class="org.eclipselabs.spray.examples.er.diagram.internal.ExecutableExtensionFactory:org.eclipselabs.spray.examples.er.diagram.diagram.EntityRelationshipDiagramDiagramEditor"
        contributorClass="org.eclipse.graphiti.ui.editor.DiagramEditorActionBarContributor"
        default="true"
        extensions="diagram"
        icon="icons/diagram.gif"
-       id="org.eclipselabs.spray.examples.er.diagram.diagram.MydiagramDiagramEditor"
+       id="org.eclipselabs.spray.examples.er.diagram.diagram.EntityRelationshipDiagramDiagramEditor"
        matchingStrategy="org.eclipse.graphiti.ui.editor.DiagramEditorFactory$DiagramEditorMatchingStrategy"
        name="%_diagram_editor_name">
     <contentTypeBinding
@@ -32,10 +32,10 @@
        point="org.eclipse.graphiti.ui.diagramTypes">
     <!-- DIAGRAM TYPE AUTOGEN START -->
      <diagramType
-  description="This is the diagram type for the Mydiagram diagram type"
-  id="org.eclipselabs.spray.examples.er.diagram.diagram.MydiagramDiagramType"
-  name="Mydiagram Graphiti Diagram Type"
-  type="Mydiagram">
+  description="This is the diagram type for the EntityRelationshipDiagram diagram type"
+  id="org.eclipselabs.spray.examples.er.diagram.diagram.EntityRelationshipDiagramDiagramType"
+  name="EntityRelationshipDiagram Graphiti Diagram Type"
+  type="EntityRelationshipDiagram">
 </diagramType>
      <!-- DIAGRAM TYPE AUTOGEN END -->
   </extension>
@@ -44,15 +44,15 @@
        point="org.eclipse.graphiti.ui.diagramTypeProviders">
     <!-- DIAGRAM TYPE PROVIDER AUTOGEN START -->
      <diagramTypeProvider
-  class="org.eclipselabs.spray.examples.er.diagram.internal.ExecutableExtensionFactory:org.eclipselabs.spray.examples.er.diagram.diagram.MydiagramDiagramTypeProvider"
-  description="This is my editor for the Mydiagram diagram type"
-  id="org.eclipselabs.spray.examples.er.diagram.diagram.MydiagramDiagramTypeProvider"
-  name="Mydiagram editor">
+  class="org.eclipselabs.spray.examples.er.diagram.internal.ExecutableExtensionFactory:org.eclipselabs.spray.examples.er.diagram.diagram.EntityRelationshipDiagramDiagramTypeProvider"
+  description="This is my editor for the EntityRelationshipDiagram diagram type"
+  id="org.eclipselabs.spray.examples.er.diagram.diagram.EntityRelationshipDiagramDiagramTypeProvider"
+  name="EntityRelationshipDiagram editor">
   <diagramType
-        id="org.eclipselabs.spray.examples.er.diagram.diagram.MydiagramDiagramType">
+        id="org.eclipselabs.spray.examples.er.diagram.diagram.EntityRelationshipDiagramDiagramType">
   </diagramType>
     <imageProvider
-           id="org.eclipselabs.spray.examples.er.diagram.diagram.MydiagramImageProvider">
+           id="org.eclipselabs.spray.examples.er.diagram.diagram.EntityRelationshipDiagramImageProvider">
      </imageProvider>
 </diagramTypeProvider>
      <!-- DIAGRAM TYPE PROVIDER AUTOGEN END -->
@@ -62,8 +62,8 @@
        point="org.eclipse.graphiti.ui.imageProviders">
     <!-- IMAGE PROVIDER AUTOGEN START -->
      <imageProvider
-      class="org.eclipselabs.spray.examples.er.diagram.internal.ExecutableExtensionFactory:org.eclipselabs.spray.examples.er.diagram.diagram.MydiagramImageProvider"
-         id="org.eclipselabs.spray.examples.er.diagram.diagram.MydiagramImageProvider">
+      class="org.eclipselabs.spray.examples.er.diagram.internal.ExecutableExtensionFactory:org.eclipselabs.spray.examples.er.diagram.diagram.EntityRelationshipDiagramImageProvider"
+         id="org.eclipselabs.spray.examples.er.diagram.diagram.EntityRelationshipDiagramImageProvider">
 </imageProvider>
      <!-- IMAGE PROVIDER AUTOGEN END -->
   </extension>
@@ -80,30 +80,41 @@
        point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
     <propertyTabs contributorId="Mydiagram.PropertyContributor">
       <!-- PROPERTY TAB AUTOGEN START -->
-     <propertyTab label="Main" category="MydiagramCategory"
-    id="Mydiagram.main.tab">
+     <propertyTab label="Main" category="EntityRelationshipDiagramCategory"
+    id="EntityRelationshipDiagram.main.tab">
 </propertyTab>
      <!-- PROPERTY TAB AUTOGEN END -->
     </propertyTabs>
   </extension>
   
   <!-- PROPERTY SECTIONS AUTOGEN START -->
-    <!-- PROPERTY SECTIONS AUTOGEN END -->
+     <extension
+    point="org.eclipse.ui.views.properties.tabbed.propertySections">
+    <propertySections contributorId="EntityRelationshipDiagram.PropertyContributor">
+  <propertySection tab="EntityRelationshipDiagram.main.tab"
+   class="org.eclipselabs.spray.examples.er.diagram.internal.ExecutableExtensionFactory:org.eclipselabs.spray.examples.er.diagram.property.EntityNameSection"
+   filter="org.eclipselabs.spray.examples.er.diagram.property.EntityFilter"
+   id="EntityRelationshipDiagram.main.tab.Entity.name">
+  </propertySection>
+    </propertySections>
+</extension>
+
+     <!-- PROPERTY SECTIONS AUTOGEN END -->
   
   <!-- NEW DIAGRAM WIZARD AUTOGEN START -->
      <extension
       point="org.eclipse.ui.newWizards">
       <category
-         name="Mydiagram"
-         id="org.eclipselabs.spray.Mydiagram">
+         name="EntityRelationshipDiagram"
+         id="org.eclipselabs.spray.EntityRelationshipDiagram">
          </category>
    <wizard
-         category="org.eclipselabs.spray.Mydiagram"
+         category="org.eclipselabs.spray.EntityRelationshipDiagram"
          class="org.eclipselabs.spray.examples.er.diagram.internal.ExecutableExtensionFactory:org.eclipselabs.spray.runtime.graphiti.wizard.NewDiagramWizard"
-         descriptionImage="icons/Mydiagram-32.png"
-         icon="icons/Mydiagram-16.png"
-         id="org.eclipselabs.spray.Mydiagram.NewDiagramWizard"
-         name="New Mydiagram Diagram"
+         descriptionImage="icons/EntityRelationshipDiagram-32.png"
+         icon="icons/EntityRelationshipDiagram-16.png"
+         id="org.eclipselabs.spray.EntityRelationshipDiagram.NewDiagramWizard"
+         name="New EntityRelationshipDiagram Diagram"
          preferredPerspectives="org.eclipse.graphiti.examples.common.perspective.GFPerspective"
          project="false">
    </wizard>
