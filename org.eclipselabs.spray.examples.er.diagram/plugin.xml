@@ -99,6 +99,12 @@
     </propertySections>
 </extension>
 
+<extension
+    point="org.eclipse.ui.views.properties.tabbed.propertySections">
+    <propertySections contributorId="EntityRelationshipDiagram.PropertyContributor">
+    </propertySections>
+</extension>
+
      <!-- PROPERTY SECTIONS AUTOGEN END -->
   
   <!-- NEW DIAGRAM WIZARD AUTOGEN START -->

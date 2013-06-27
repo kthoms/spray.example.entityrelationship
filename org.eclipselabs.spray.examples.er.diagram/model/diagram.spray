@@ -20,3 +20,14 @@ class Entity icon "ecore/EClass.gif" {
 	    create into entities palette "Objects"
 	}
 }
+
+class Relationship alias ToOneRelationship icon "ecore/EReference.gif" {
+    connection ToOneConnectionShape {
+        from fromEntity
+        to   toEntity
+    }
+    behavior {
+        create into relationships palette "Relationships"
+        
+    }   
+}
