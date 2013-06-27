@@ -11,6 +11,8 @@ package org.eclipselabs.spray.examples.er.diagram.features;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.graphiti.features.IFeatureProvider;
 import org.eclipse.graphiti.features.context.ICustomContext;
+import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.swt.widgets.Display;
 
 public class EntityRelationshipDiagramCustomShowInformationFeature extends EntityRelationshipDiagramCustomShowInformationFeatureBase {
     public EntityRelationshipDiagramCustomShowInformationFeature(final IFeatureProvider fp) {
@@ -21,8 +23,10 @@ public class EntityRelationshipDiagramCustomShowInformationFeature extends Entit
      * {@inheritDoc}
      */
     @Override
-    public void execute(final ICustomContext context, final EObject object) {
-        // TODO add code here.
-    }
+	public void execute(final ICustomContext context, final EObject object) {
+		MessageDialog.openInformation(Display.getDefault().getActiveShell(),
+				"Information", "Selected object is of type "
+						+ object.eClass().getName());
+	}
 
 }
