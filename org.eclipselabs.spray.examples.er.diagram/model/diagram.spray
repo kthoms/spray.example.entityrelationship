@@ -19,6 +19,7 @@ class Entity icon "ecore/EClass.gif" {
 	}
 	behavior {
 	    create into entities palette "Objects"
+	    custom showInformation "Show Information"
 	}
 }
 
