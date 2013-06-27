@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<!--
+ Generated on Thu Jun 27 09:07:41 CEST 2013 by Spray Plugin.xtend
+ This file will be generated only once if it need to be regenerated, remove this file.
+ 
+-->
+<plugin>
+  
+  <!-- GRAPHITI EDITOR EXTENSION AUTOGEN START -->
+     <!-- Potentially redefine the EDITOR EXTENSION TO ALLOW FOR OUR OWN EDITOR SUBCLASS TO BE USED. 
+<extension
+      point="org.eclipse.ui.editors">
+   <editor
+       class="org.eclipselabs.spray.examples.er.diagram.internal.ExecutableExtensionFactory:org.eclipselabs.spray.examples.er.diagram.diagram.MydiagramDiagramEditor"
+       contributorClass="org.eclipse.graphiti.ui.editor.DiagramEditorActionBarContributor"
+       default="true"
+       extensions="diagram"
+       icon="icons/diagram.gif"
+       id="org.eclipselabs.spray.examples.er.diagram.diagram.MydiagramDiagramEditor"
+       matchingStrategy="org.eclipse.graphiti.ui.editor.DiagramEditorFactory$DiagramEditorMatchingStrategy"
+       name="%_diagram_editor_name">
+    <contentTypeBinding
+          contentTypeId="org.eclipse.graphiti.content.diagram">
+    </contentTypeBinding>
+   </editor>
+</extension>
+-->
+     <!-- GRAPHITI EDITOR EXTENSION AUTOGEN END -->
+  
+  <extension
+       point="org.eclipse.graphiti.ui.diagramTypes">
+    <!-- DIAGRAM TYPE AUTOGEN START -->
+     <diagramType
+  description="This is the diagram type for the Mydiagram diagram type"
+  id="org.eclipselabs.spray.examples.er.diagram.diagram.MydiagramDiagramType"
+  name="Mydiagram Graphiti Diagram Type"
+  type="Mydiagram">
+</diagramType>
+     <!-- DIAGRAM TYPE AUTOGEN END -->
+  </extension>
+  
+  <extension
+       point="org.eclipse.graphiti.ui.diagramTypeProviders">
+    <!-- DIAGRAM TYPE PROVIDER AUTOGEN START -->
+     <diagramTypeProvider
+  class="org.eclipselabs.spray.examples.er.diagram.internal.ExecutableExtensionFactory:org.eclipselabs.spray.examples.er.diagram.diagram.MydiagramDiagramTypeProvider"
+  description="This is my editor for the Mydiagram diagram type"
+  id="org.eclipselabs.spray.examples.er.diagram.diagram.MydiagramDiagramTypeProvider"
+  name="Mydiagram editor">
+  <diagramType
+        id="org.eclipselabs.spray.examples.er.diagram.diagram.MydiagramDiagramType">
+  </diagramType>
+    <imageProvider
+           id="org.eclipselabs.spray.examples.er.diagram.diagram.MydiagramImageProvider">
+     </imageProvider>
+</diagramTypeProvider>
+     <!-- DIAGRAM TYPE PROVIDER AUTOGEN END -->
+  </extension>
+  
+  <extension
+       point="org.eclipse.graphiti.ui.imageProviders">
+    <!-- IMAGE PROVIDER AUTOGEN START -->
+     <imageProvider
+      class="org.eclipselabs.spray.examples.er.diagram.internal.ExecutableExtensionFactory:org.eclipselabs.spray.examples.er.diagram.diagram.MydiagramImageProvider"
+         id="org.eclipselabs.spray.examples.er.diagram.diagram.MydiagramImageProvider">
+</imageProvider>
+     <!-- IMAGE PROVIDER AUTOGEN END -->
+  </extension>
+  
+  <extension
+       point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+    <propertyContributor contributorId="Mydiagram.PropertyContributor">
+       <propertyCategory category="MydiagramCategory">
+       </propertyCategory>
+    </propertyContributor>
+  </extension>
+  
+  <extension
+       point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+    <propertyTabs contributorId="Mydiagram.PropertyContributor">
+      <!-- PROPERTY TAB AUTOGEN START -->
+     <propertyTab label="Main" category="MydiagramCategory"
+    id="Mydiagram.main.tab">
+</propertyTab>
+     <!-- PROPERTY TAB AUTOGEN END -->
+    </propertyTabs>
+  </extension>
+  
+  <!-- PROPERTY SECTIONS AUTOGEN START -->
+    <!-- PROPERTY SECTIONS AUTOGEN END -->
+  
+  <!-- NEW DIAGRAM WIZARD AUTOGEN START -->
+     <extension
+      point="org.eclipse.ui.newWizards">
+      <category
+         name="Mydiagram"
+         id="org.eclipselabs.spray.Mydiagram">
+         </category>
+   <wizard
+         category="org.eclipselabs.spray.Mydiagram"
+         class="org.eclipselabs.spray.examples.er.diagram.internal.ExecutableExtensionFactory:org.eclipselabs.spray.runtime.graphiti.wizard.NewDiagramWizard"
+         descriptionImage="icons/Mydiagram-32.png"
+         icon="icons/Mydiagram-16.png"
+         id="org.eclipselabs.spray.Mydiagram.NewDiagramWizard"
+         name="New Mydiagram Diagram"
+         preferredPerspectives="org.eclipse.graphiti.examples.common.perspective.GFPerspective"
+         project="false">
+   </wizard>
+</extension>
+     <!-- NEW DIAGRAM WIZARD AUTOGEN END -->
+  
+</plugin>
